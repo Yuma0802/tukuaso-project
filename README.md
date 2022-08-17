@@ -2,20 +2,28 @@
 
 - プッシュ操作の流れ
 
-  - git add -A #ステージングエリアに移動
-  - git commit -m "メッセージ" #コミット
-  - git push origin ブランチ名 #プッシュ
+  - git add -A
+    -> #ステージングエリアに移動
+  - git commit -m "メッセージ"
+    -> #コミット
+  - git push origin ブランチ名
+    -> #プッシュ
 
 - ブランチ操作
 
-  - git checkout -b "ブランチ名" #新しくブランチを作成と移行
-  - git branch #現在のブランチを確認
-  - git checkout ブランチ名 #既存のブランチへ移動
+  - git checkout -b "ブランチ名"
+    -> #新しくブランチを作成と移行
+  - git branch
+    -> #現在のブランチを確認
+  - git checkout ブランチ名
+    -> #既存のブランチへ移動
 
 - 変更分を取り込み
 
-  - git pull origin master #リモートの master ブランチから最新版を取り込み
-  - git pull origin ブランチ名 #任意のブランチを取り込み
+  - git pull origin master
+    -> #リモートの master ブランチから最新版を取り込み
+  - git pull origin ブランチ名
+    -> #任意のブランチを取り込み
 
 # Getting Started with Create React App
 
