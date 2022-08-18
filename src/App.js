@@ -3,12 +3,14 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Root from './container/Root';
+import GameMain from './game/GameMain';
 
 function App() {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path='/'><Root /></Route>
+        <Route exact path='/game'><GameMain /></Route>
       </Switch>
     </BrowserRouter>
   );
