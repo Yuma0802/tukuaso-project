@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import GameMain from './game/GameMain';
 //import TitlePage from './presentational/Organisms/TitlePage';
-import CrearOrOutTemplate from './Presentational/Organisms/CrearOrOutTemplate';
+import ClearOrOutTemplate from './Presentational/Organisms/ClearOrOutTemplate';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
     //   </Switch>
     // </BrowserRouter>
 
-    <CrearOrOutTemplate num={3} text="やりなおす"/>
+    <ClearOrOutTemplate num={2} text="つぎへ"/>
   );
 }
 

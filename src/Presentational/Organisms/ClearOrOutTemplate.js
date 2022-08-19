@@ -3,18 +3,18 @@ import styled from 'styled-components';
 import CommonBtn from "../Atoms/CommonBtn";
 import out_1Img from '../../img/out_1.jpg';
 import out_2Img from '../../img/out_2.jpg';
-import crear_1Img from '../../img/crear_1.jpg';
-import crear_2Img from '../../img/crear_2.jpg';
+import clear_1Img from '../../img/clear_1.jpg';
+import clear_2Img from '../../img/clear_2.jpg';
 
-const CrearOrOutTemplate = (props) => {
+const ClearOrOutTemplate = (props) => {
 
-  let img = crear_1Img;
+  let img = clear_1Img;
   if(props.num === 0){
-    img = crear_1Img;
+    img = clear_1Img;
   }else if(props.num === 1){
     img = out_1Img
   }else if(props.num === 2){
-    img = crear_2Img
+    img = clear_2Img
   }else if(props.num === 3){
     img = out_2Img
   }
@@ -65,4 +65,4 @@ const BtnWraper = styled.div`
   width: 160px;
 `;
 
-export default CrearOrOutTemplate;
+export default ClearOrOutTemplate;
