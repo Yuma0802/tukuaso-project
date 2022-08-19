@@ -8,6 +8,10 @@ import clear_2Img from '../../img/clear_2.jpg';
 
 const ClearOrOutTemplate = (props) => {
 
+  const goPage = () => {
+    location.href = props.toPath;
+  }
+
   let img = clear_1Img;
   if(props.num === 0){
     img = clear_1Img;
@@ -23,7 +27,7 @@ const ClearOrOutTemplate = (props) => {
   <WholeWraps img={img}>
 
       <BtnWraper>
-        <CommonBtn text={props.text}/>
+        <CommonBtn text={props.text} clickedFn={goPage}/>
       </BtnWraper>
     </WholeWraps>
  )
