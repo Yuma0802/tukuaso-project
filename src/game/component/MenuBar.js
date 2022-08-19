@@ -6,7 +6,7 @@ import arrowImg from './../../img/arrow.svg';
 
 const Bar = styled.div`
     padding: 0 40px;
-    width: 100vw;
+    width: 100%;
     height: 75px;
     background-color: #333333;
     display: flex;
@@ -42,7 +42,16 @@ const TranslationImg = styled.img`
 
 const Arrow = styled.img`
     margin: 0 10px;
-    width: 24px;
+    width: 28px;
+`;
+
+const Lv = styled.h3`
+    font-size: 20px;
+    color: white;
+`;
+
+const Span = styled.span`
+    color: #52a6e1;
 `;
 
 const MenuBar = (props) => {
@@ -53,6 +62,9 @@ const MenuBar = (props) => {
                 <ImgCandle src={candleImg} />
                 <ImgCandle src={candleImg} />
             </Flex>
+
+            <Lv>Lv.<Span>{props.lvName}</Span></Lv>
+            
             <Flex>
                 <Arrow src={arrowImg} />
                 <BackHome>ホームに戻る</BackHome>

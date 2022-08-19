@@ -8,7 +8,7 @@ const TextBarWrap = styled.div`
 
 const TextBarImg = styled.img`
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 140px;
     top: 0;
     left: 0;
