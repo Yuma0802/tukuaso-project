@@ -4,6 +4,8 @@ import { withRouter } from "react-router-dom";
 import styled from 'styled-components';
 
 import Monk from "./component/Monk";
+import MenuBar from "./component/MenuBar";
+import TextBar from "./component/TextBar";
 
 let View;
 
@@ -13,16 +15,28 @@ class GameView extends Component {
 
         View = styled.section`
             position: relative;
-            width: ${props.maxGameViewX}px;
-            height: ${props.maxGameViewY}
+            // width: ${props.maxGameViewX}px;
+            // height: ${props.maxGameViewY}px;
+            // background-color: red;
         `;
     }
 
     render() {
         return(
             <View>
-                <p>game</p>
-                <Monk top={this.props.monkCoordinate[0]} left={this.props.monkCoordinate[1]} />
+                <MenuBar time={this.props.time} />
+                {/* <Monk top={this.props.monkCoordinate[0]} left={this.props.monkCoordinate[1]} /> */}
+                <h1>!</h1>
+                <h1>!</h1>
+                <h1>!</h1>
+                <h1>!</h1>
+                <h1>!</h1>
+                <h1>!</h1>
+                <h1>!</h1>
+                <h1>!</h1>
+                <h1>!</h1>
+                <h1>!</h1>
+                <TextBar text="僧を見つけよ" />
             </View>
         );
     }
