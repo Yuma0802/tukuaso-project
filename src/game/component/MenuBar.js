@@ -54,14 +54,30 @@ const Lv = styled.h3`
     font-family: 'Shippori Mincho', serif;
 `;
 
-const Span = styled.span`
-    color: #52a6e1;
-`;
+let Span;
 
 const MenuBar = (props) => {
     let candleArr = [];
     for(let i = 0; i < props.candleNum; i++) {
         candleArr.push(<ImgCandle src={candleImg} />)
+    }
+
+    switch(props.lvName) {
+        case '権律師':
+            Span = styled.span`
+                color: #52a6e1;
+            `;
+            break;
+        case '権中僧正':
+            Span = styled.span`
+                color: #9339b9;
+            `;
+            break;
+        case '大僧正':
+            Span = styled.span`
+                color: #b92720;
+            `;
+            break;
     }
 
     const backHome = () => {
