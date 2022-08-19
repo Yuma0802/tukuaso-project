@@ -56,7 +56,18 @@ class GameMain extends Component {
         
         document.querySelector('#gameView').classList.add('open-success');
 
-        //リダイレクト
+        setTimeout(function() {
+            document.querySelector('#gameView').classList.remove('open-success');
+
+            switch(this.props.match.params.lv) {
+                case '1':
+                    location.href = '/game/1/success'
+                    break;
+                case '2':
+                    location.href = '/game/2/success'
+                    break;
+            }
+        }.bind(this), 2000);
     }
     lostClickFn() {
         console.log('lost click');
@@ -72,7 +83,14 @@ class GameMain extends Component {
 
             if(this.state.candleNum == 0) {
                 console.log('game over');
-                //リダイレクト
+                switch(this.props.match.params.lv) {
+                    case '1':
+                        location.href = '/game/1/lost'
+                        break;
+                    case '2':
+                        location.href = '/game/2/lost'
+                        break;
+                }
             }
         }.bind(this), 2000);
     }
@@ -85,7 +103,7 @@ class GameMain extends Component {
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
                             time={this.state.time} 
-                            monkClickFn={this.monkClickFn} 
+                            monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
                         />
@@ -96,7 +114,7 @@ class GameMain extends Component {
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
                             time={this.state.time} 
-                            monkClickFn={this.monkClickFn} 
+                            monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
                         />
@@ -107,7 +125,7 @@ class GameMain extends Component {
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
                             time={this.state.time} 
-                            monkClickFn={this.monkClickFn} 
+                            monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
                         />
