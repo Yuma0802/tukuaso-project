@@ -34,6 +34,7 @@ const BackHome = styled.h3`
     color: white;
     font-size: 16px;
     font-family: 'Shippori Mincho', serif;
+    cursor: pointer;
 `;
 
 const TranslationImg = styled.img`
@@ -44,6 +45,7 @@ const TranslationImg = styled.img`
 const Arrow = styled.img`
     margin: 0 10px;
     width: 28px;
+    cursor: pointer;
 `;
 
 const Lv = styled.h3`
@@ -62,6 +64,10 @@ const MenuBar = (props) => {
         candleArr.push(<ImgCandle src={candleImg} />)
     }
 
+    const backHome = () => {
+        location.href = '/'
+    }
+
     return(
         <Bar>
             <Flex>
@@ -72,8 +78,8 @@ const MenuBar = (props) => {
             <Lv>Lv.<Span>{props.lvName}</Span></Lv>
             
             <Flex>
-                <Arrow src={arrowImg} />
-                <BackHome>ホームに戻る</BackHome>
+                <Arrow src={arrowImg} onClick={backHome} />
+                <BackHome onClick={backHome}>ホームに戻る</BackHome>
                 {/* <TranslationImg src={translationImg} /> */}
             </Flex>
         </Bar>

@@ -32,7 +32,7 @@ const BackImageLost = styled.div`
 const LostMs = styled.h3`
     position: absolute;
     color: white;
-    font-size: 36px;
+    font-size: 56px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -50,7 +50,7 @@ const BackImageSuccess = styled.div`
 const SuccessMs = styled.h3`
     position: absolute;
     color: black;
-    font-size: 46px;
+    font-size: 66px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
