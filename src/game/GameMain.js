@@ -14,7 +14,8 @@ class GameMain extends Component {
 
         this.state = {
             monkCoordinate: this.createRandomCoordinate(this.maxGameViewX, this.maxGameViewY),
-            time: 30
+            time: 30,
+            candleNum: 3
         }
     }
 
@@ -46,13 +47,47 @@ class GameMain extends Component {
         this.timeCountObj = setInterval(this.setTime.bind(this) ,1000);
     }
 
+    monkClickFn() {
+        console.log('monk click');
+        
+        document.querySelector('#gameView').classList.add('open-success');
+
+        //リダイレクト
+    }
+    lostClickFn() {
+        console.log('lost click');
+
+        document.querySelector('#gameView').classList.add('open-lost');
+
+        this.setState({
+            candleNum: this.state.candleNum - 1
+        });
+
+        setTimeout(function() {
+            document.querySelector('#gameView').classList.remove('open-lost');
+
+            if(this.state.candleNum == 0) {
+                console.log('game over');
+                //リダイレクト
+            }
+        }.bind(this), 3000);
+    }
+
 
     /////////////////////////////////////
 
     render() {
         return(
             <>
-                <GameView maxGameViewX={this.maxGameViewX} maxGameViewY={this.maxGameViewY} monkCoordinate={this.state.monkCoordinate} time={this.state.time} />
+                <GameView 
+                    maxGameViewX={this.maxGameViewX} 
+                    maxGameViewY={this.maxGameViewY} 
+                    monkCoordinate={this.state.monkCoordinate} 
+                    time={this.state.time} 
+                    monkClickFn={this.monkClickFn} 
+                    lostClickFn={this.lostClickFn.bind(this)} 
+                    candleNum={this.state.candleNum}
+                />
             </>
         );
     }

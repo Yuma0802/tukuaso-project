@@ -33,6 +33,7 @@ const ImgCandle = styled.img`
 const BackHome = styled.h3`
     color: white;
     font-size: 16px;
+    font-family: 'Shippori Mincho', serif;
 `;
 
 const TranslationImg = styled.img`
@@ -48,6 +49,7 @@ const Arrow = styled.img`
 const Lv = styled.h3`
     font-size: 20px;
     color: white;
+    font-family: 'Shippori Mincho', serif;
 `;
 
 const Span = styled.span`
@@ -55,12 +57,16 @@ const Span = styled.span`
 `;
 
 const MenuBar = (props) => {
+    let candleArr = [];
+    for(let i = 0; i < props.candleNum; i++) {
+        candleArr.push(<ImgCandle src={candleImg} />)
+    }
+
     return(
         <Bar>
             <Flex>
                 <Time>{props.time}</Time>
-                <ImgCandle src={candleImg} />
-                <ImgCandle src={candleImg} />
+                {candleArr}
             </Flex>
 
             <Lv>Lv.<Span>{props.lvName}</Span></Lv>

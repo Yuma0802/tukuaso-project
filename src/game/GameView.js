@@ -20,6 +20,42 @@ const Monk = styled.img`
     left: 180px;
     width: 300px;
 `;
+const BackImageLost = styled.div`
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .6;
+    background-color: black;
+`;
+const LostMs = styled.h3`
+    position: absolute;
+    color: white;
+    font-size: 36px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Shippori Mincho', serif;
+`;
+const BackImageSuccess = styled.div`
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .6;
+    background-color: white;
+`;
+const SuccessMs = styled.h3`
+    position: absolute;
+    color: black;
+    font-size: 46px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Shippori Mincho', serif;
+`;
 
 class GameView extends Component {
     constructor(props) {
@@ -27,8 +63,6 @@ class GameView extends Component {
 
         View = styled.section`
             position: relative;
-            // width: ${props.maxGameViewX}px;
-            // height: ${props.maxGameViewY}px;
             width: 1320px;
             height: 860px;
             background-color: red;
@@ -38,10 +72,14 @@ class GameView extends Component {
 
     render() {
         return(
-            <View>
-                <MenuBar time={this.props.time} lvName="権律師" />
-                <GameBackImg src={lv1BackImg} />
-                <Monk src={lv1MonkImg} />
+            <View id="gameView">
+                <MenuBar time={this.props.time} lvName="権律師" candleNum={this.props.candleNum} />
+                <GameBackImg src={lv1BackImg} onClick={this.props.lostClickFn} />
+                <Monk src={lv1MonkImg} onClick={this.props.monkClickFn} />
+                <BackImageLost className="lost-view"></BackImageLost>
+                <LostMs className="lost-view">いや違う、僧じゃないー</LostMs>
+                <BackImageSuccess className="success-view"></BackImageSuccess>
+                <SuccessMs className="success-view">僧だ！</SuccessMs>
             </View>
         );
     }
