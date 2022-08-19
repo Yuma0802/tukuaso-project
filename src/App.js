@@ -10,7 +10,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path='/'><Root /></Route>
-        <Route exact path='/game'><GameMain /></Route>
+        <Route exact path='/game/:lv'><GameMain /></Route>
       </Switch>
     </BrowserRouter>
   );
