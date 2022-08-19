@@ -2,6 +2,7 @@ import { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 import GameView from "./GameView";
+import GameView2 from "./GameView2";
 
 class GameMain extends Component {
     constructor(props) {
@@ -15,7 +16,8 @@ class GameMain extends Component {
         this.state = {
             monkCoordinate: this.createRandomCoordinate(this.maxGameViewX, this.maxGameViewY),
             time: 30,
-            candleNum: 3
+            candleNum: 3,
+            gameView: null
         }
     }
 
@@ -23,6 +25,7 @@ class GameMain extends Component {
     //game script
     componentDidMount() {
         this.timeCount();
+        this.setGameView();
     }
 
 
@@ -73,21 +76,40 @@ class GameMain extends Component {
         }.bind(this), 2000);
     }
 
+    setGameView() {
+        switch(this.props.match.params.lv) {
+            case '1':
+                return <GameView 
+                            maxGameViewX={this.maxGameViewX} 
+                            maxGameViewY={this.maxGameViewY} 
+                            monkCoordinate={this.state.monkCoordinate} 
+                            time={this.state.time} 
+                            monkClickFn={this.monkClickFn} 
+                            lostClickFn={this.lostClickFn.bind(this)} 
+                            candleNum={this.state.candleNum}
+                        />
+                break;
+            case '2':
+                return <GameView2 
+                            maxGameViewX={this.maxGameViewX} 
+                            maxGameViewY={this.maxGameViewY} 
+                            monkCoordinate={this.state.monkCoordinate} 
+                            time={this.state.time} 
+                            monkClickFn={this.monkClickFn} 
+                            lostClickFn={this.lostClickFn.bind(this)} 
+                            candleNum={this.state.candleNum}
+                        />
+                break;
+        }
+    }
+
 
     /////////////////////////////////////
 
     render() {
         return(
             <>
-                <GameView 
-                    maxGameViewX={this.maxGameViewX} 
-                    maxGameViewY={this.maxGameViewY} 
-                    monkCoordinate={this.state.monkCoordinate} 
-                    time={this.state.time} 
-                    monkClickFn={this.monkClickFn} 
-                    lostClickFn={this.lostClickFn.bind(this)} 
-                    candleNum={this.state.candleNum}
-                />
+                {this.setGameView()}
             </>
         );
     }
