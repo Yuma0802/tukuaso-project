@@ -70,7 +70,7 @@ class GameMain extends Component {
                 console.log('game over');
                 //リダイレクト
             }
-        }.bind(this), 3000);
+        }.bind(this), 2000);
     }
 
 
