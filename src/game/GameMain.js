@@ -3,6 +3,7 @@ import { withRouter } from "react-router-dom";
 
 import GameView from "./GameView";
 import GameView2 from "./GameView2";
+import GameView3 from "./GameView3";
 
 class GameMain extends Component {
     constructor(props) {
@@ -91,6 +92,17 @@ class GameMain extends Component {
                 break;
             case '2':
                 return <GameView2 
+                            maxGameViewX={this.maxGameViewX} 
+                            maxGameViewY={this.maxGameViewY} 
+                            monkCoordinate={this.state.monkCoordinate} 
+                            time={this.state.time} 
+                            monkClickFn={this.monkClickFn} 
+                            lostClickFn={this.lostClickFn.bind(this)} 
+                            candleNum={this.state.candleNum}
+                        />
+                break;
+            case '3':
+                return <GameView3
                             maxGameViewX={this.maxGameViewX} 
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
