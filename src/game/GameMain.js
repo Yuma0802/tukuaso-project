@@ -7,19 +7,22 @@ class GameMain extends Component {
     constructor(props) {
         super(props);
 
-        this.maxGameViewX = 500;
-        this.maxGameViewY = 500;
+        this.maxGameViewX = document.documentElement.clientWidth;
+        this.maxGameViewY = document.documentElement.clientHeight;
+
+        this.timeCountObj = null;
 
         this.state = {
-            monkCoordinate: this.createRandomCoordinate(this.maxGameViewX, this.maxGameViewY)
+            monkCoordinate: this.createRandomCoordinate(this.maxGameViewX, this.maxGameViewY),
+            time: 30
         }
     }
 
     /////////////////////////////////////
     //game script
-    // componentDidMount() {
-    //     this.setMonkCoordinate();
-    // }
+    componentDidMount() {
+        this.timeCount();
+    }
 
 
     createRandomCoordinate(maxX, maxY) {
@@ -28,13 +31,28 @@ class GameMain extends Component {
         return [x, y]
     }
 
+    setTime() {
+        this.setState({
+            time: this.state.time - 1
+        });
+        
+        if(this.state.time == 0) {
+            console.log('end');
+            clearInterval(this.timeCountObj);
+        }
+    }
+
+    timeCount() {
+        this.timeCountObj = setInterval(this.setTime.bind(this) ,1000);
+    }
+
 
     /////////////////////////////////////
 
     render() {
         return(
             <>
-                <GameView maxGameViewX={this.maxGameViewX} maxGameViewY={this.maxGameViewY} monkCoordinate={this.state.monkCoordinate} />
+                <GameView maxGameViewX={this.maxGameViewX} maxGameViewY={this.maxGameViewY} monkCoordinate={this.state.monkCoordinate} time={this.state.time} />
             </>
         );
     }
