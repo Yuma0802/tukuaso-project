@@ -24,12 +24,14 @@ const SCommonBtnWrap = styled.button`
     letter-spacing: 0.04em;
     color: white;
     background-color: transparent;
+
+    outline: none;
   
   &:hover {
     cursor: pointer;
     color: black;
     background-color: #F3F3F3;
-    transition: 2.0s ;
+    transition: 300ms ;
   }
   &::after {
     top: 0;
