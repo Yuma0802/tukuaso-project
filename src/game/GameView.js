@@ -14,11 +14,13 @@ const GameBackImg = styled.img`
     width: 100%;
     height: 100%;
 `;
-const Monk = styled.img`
+const Monk = styled.div`
     position: absolute;
-    top: 385px;
-    left: 180px;
-    width: 300px;
+    top: 470px;
+    left: 260px;
+    width: 160px;
+    height: 320px;
+    // background-color: red;
 `;
 const BackImageLost = styled.div`
     width: 100%;
@@ -75,7 +77,7 @@ class GameView extends Component {
             <View id="gameView">
                 <MenuBar lvName="権律師" candleNum={this.props.candleNum} />
                 <GameBackImg src={lv1BackImg} onClick={this.props.lostClickFn} />
-                <Monk src={lv1MonkImg} onClick={this.props.monkClickFn} />
+                <Monk onClick={this.props.monkClickFn} />
                 <BackImageLost className="lost-view"></BackImageLost>
                 <LostMs className="lost-view">いや違う、僧じゃないー</LostMs>
                 <BackImageSuccess className="success-view"></BackImageSuccess>
