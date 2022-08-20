@@ -87,7 +87,6 @@ const MenuBar = (props) => {
     return(
         <Bar>
             <Flex>
-                <Time>{props.time}</Time>
                 {candleArr}
             </Flex>
 

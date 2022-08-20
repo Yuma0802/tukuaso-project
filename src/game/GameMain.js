@@ -16,7 +16,6 @@ class GameMain extends Component {
 
         this.state = {
             monkCoordinate: this.createRandomCoordinate(this.maxGameViewX, this.maxGameViewY),
-            time: 30,
             candleNum: 3,
             gameView: null
         }
@@ -25,30 +24,13 @@ class GameMain extends Component {
     /////////////////////////////////////
     //game script
     componentDidMount() {
-        this.timeCount();
         this.setGameView();
     }
-
 
     createRandomCoordinate(maxX, maxY) {
         let x = Math.floor( Math.random() * (maxX + 1 - 0) ) + 0;
         let y = Math.floor( Math.random() * (maxY + 1 - 0) ) + 0;
         return [x, y]
-    }
-
-    setTime() {
-        this.setState({
-            time: this.state.time - 1
-        });
-        
-        if(this.state.time == 0) {
-            console.log('end');
-            clearInterval(this.timeCountObj);
-        }
-    }
-
-    timeCount() {
-        this.timeCountObj = setInterval(this.setTime.bind(this) ,1000);
     }
 
     monkClickFn() {
@@ -108,7 +90,6 @@ class GameMain extends Component {
                             maxGameViewX={this.maxGameViewX} 
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
-                            time={this.state.time} 
                             monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
@@ -119,7 +100,6 @@ class GameMain extends Component {
                             maxGameViewX={this.maxGameViewX} 
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
-                            time={this.state.time} 
                             monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
@@ -130,7 +110,6 @@ class GameMain extends Component {
                             maxGameViewX={this.maxGameViewX} 
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
-                            time={this.state.time} 
                             monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
