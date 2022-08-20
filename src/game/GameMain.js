@@ -5,8 +5,6 @@ import GameView from "./GameView";
 import GameView2 from "./GameView2";
 import GameView3 from "./GameView3";
 
-import aSuccessM from "./../music/aSuccess.mp3";
-
 class GameMain extends Component {
     constructor(props) {
         super(props);
@@ -63,11 +61,13 @@ class GameMain extends Component {
 
             switch(this.props.match.params.lv) {
                 case '1':
-                    this.playSound(aSuccessM);
                     location.href = '/game/1/success'
                     break;
                 case '2':
                     location.href = '/game/2/success'
+                    break;
+                case '3':
+                    location.href = '/game/3/success'
                     break;
             }
         }.bind(this), 2000);
@@ -92,6 +92,9 @@ class GameMain extends Component {
                         break;
                     case '2':
                         location.href = '/game/2/lost'
+                        break;
+                    case '3':
+                        location.href = '/game/3/lost'
                         break;
                 }
             }
@@ -134,13 +137,6 @@ class GameMain extends Component {
                         />
                 break;
         }
-    }
-
-    playSound(Mfile) {
-        const audio = new Audio(Mfile);
-        audio.play();
-        audio.currentTime = 0
-        console.log('play');
     }
     /////////////////////////////////////
 

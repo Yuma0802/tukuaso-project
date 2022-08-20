@@ -3,13 +3,29 @@ import styled from 'styled-components';
 import out3Img from '../../img/out_3.jpg';
 import CommonBtn from "../Atoms/CommonBtn";
 
+import lv3LostM from "./../../music/lv3Lost.mp3";
+
 const Lv3OutPage = (props) => {
+
+  const goPage = () => {
+    window.location.href = '/game/3';
+  }
+
+  const playSound = (Mfile) => {
+    const audio = new Audio(Mfile);
+    audio.volume = 0.1
+    audio.play();
+    audio.currentTime = 0
+    console.log('play');
+  }
+
+  playSound(lv3LostM);
 
   return(
     <WholeWraps>
 
     <BtnWraper>
-    <SCommonBtnWrap >やりなおす</SCommonBtnWrap>
+    <SCommonBtnWrap onClick={goPage} >やりなおす</SCommonBtnWrap>
     </BtnWraper>
   </WholeWraps>
   );
