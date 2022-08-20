@@ -13,7 +13,7 @@ const CommonBtn = (props) => {
 const SCommonBtnWrap = styled.button`
     height: 69px;
     width: 170px;
-    display:inline-block;
+    display: inline-block;
     text-align: center;
     border: 1px solid #F3F3F3;
     font-family: 'Noto Serif JP';
@@ -22,8 +22,8 @@ const SCommonBtnWrap = styled.button`
     font-size: 24px;
     line-height: 34px;
     letter-spacing: 0.04em;
-    color: black;
-    background-color:none;
+    color: white;
+    background-color: transparent;
   
   &:hover {
     cursor: pointer;
