@@ -7,6 +7,7 @@ import TitlePage from './Presentational/Organisms/TitlePage';
 import Explanation from './Presentational/Organisms/Explanation';
 import ClearOrOutTemplate from './Presentational/Organisms/ClearOrOutTemplate';
 import Lv3ClearPage from './Presentational/Organisms/Lv3ClearPage';
+import Lv3OutPage from './Presentational/Organisms/Lv3ClearPage';
 import AllClearPage from './Presentational/Organisms/AllClearPage';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/game/2/lost'><ClearOrOutTemplate num={3} text="やりなおす" toPath="/game/2" /></Route>
         <Route exact path='/game/3/success'><Lv3ClearPage /></Route>
         <Route exact path='/game/3/lost'><Lv3OutPage /></Route>
+        <Route exact path='/game/clear'><AllClearPage /></Route>
       </Switch>
     </BrowserRouter>
   );
