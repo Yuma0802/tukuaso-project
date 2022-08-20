@@ -27,6 +27,7 @@ const Lv3OutPage = (props) => {
     <BtnWraper>
     <SCommonBtnWrap onClick={goPage} >やりなおす</SCommonBtnWrap>
     </BtnWraper>
+    <Source>出典:致知出版社https://www.chichi.co.jp/info/resourceful/maxim/2019/meigen-buddhism/</Source>
   </WholeWraps>
   );
 };
@@ -110,5 +111,21 @@ const SCommonBtnWrap = styled.button`
  }
 `;
 
+const Source = styled.a.attrs({
+  href:"https://www.chichi.co.jp/info/resourceful/maxim/2019/meigen-buddhism/"
+})`
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.04em;
+
+  color: rgba(200,0,0) !important;
+`;
 
 export default Lv3OutPage;

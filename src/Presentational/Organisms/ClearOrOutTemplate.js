@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components';
 import CommonBtn from "../Atoms/CommonBtn";
-import out_1Img from '../../img/out_1.jpg';
-import out_2Img from '../../img/out_2.jpg';
+import out_1Img from '../../img/out_2.jpg';
+import out_2Img from '../../img/out_1.jpg';
 import clear_1Img from '../../img/clear_1.jpg';
 import clear_2Img from '../../img/clear_2.jpg';
 
 import successM from './../../music/aSuccess.mp3';
 
 const ClearOrOutTemplate = (props) => {
+  //const [sourceFlag, setSourceFlag] = useState(false);
 
   const goPage = () => {
     window.location.href = props.toPath;
@@ -26,15 +27,18 @@ const ClearOrOutTemplate = (props) => {
   if(props.num === 0){
     playSound(successM);
     img = clear_1Img;
+    //setSourceFlag(true);
   }else if(props.num === 1){
     playSound(successM);
-    img = out_1Img
+    img = out_1Img;
   }else if(props.num === 2){
     playSound(successM);
-    img = clear_2Img
+    img = clear_2Img;
+    //setSourceFlag(true);
   }else if(props.num === 3){
     playSound(successM);
-    img = out_2Img
+    img = out_2Img;
+    //setSourceFlag(true);
   }
 
  return(
@@ -43,7 +47,15 @@ const ClearOrOutTemplate = (props) => {
       <BtnWraper>
         <CommonBtn text={props.text} clickedFn={goPage}/>
       </BtnWraper>
-
+      {
+        (() => {
+          if(props.num !== 1){
+            return <Source>出典:致知出版社https://www.chichi.co.jp/info/resourceful/maxim/2019/meigen-buddhism/</Source>;
+          }
+        })()
+      }
+      
+    
   </WholeWraps>
  )
 };
@@ -84,47 +96,22 @@ const BtnWraper = styled.div`
   width: 160px;
 `;
 
-const SCommonBtnWrap = styled.button`
-    height: 69px;
-    width: 170px;
-    display: inline-block;
-    text-align: center;
-    border: 1px solid #4B0451;
-    font-family: 'Noto Serif JP';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 34px;
-    letter-spacing: 0.04em;
-    color: rgba(200,0,0);
-    background-color: rgba(13,17,53,0.3) ;
 
-    outline: none !important;
-    -webkit-appearance: none !important;
-    -moz-appearance: none !important;
-    appearance: none !important;
-  
-  &:hover {
-    cursor: pointer;
-    color: black;
-    background-color: rgba(172,0,0,0.5);
-    transition: 300ms ;
-  }
-  &::after {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    -webkit-transform: scale(.5);
-    transform: scale(.5);
-    color: #2B012F;
-  }
-  &:hover::after {
-    background: #333;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    color: #2B012F;
- }
+const Source = styled.a.attrs({
+  href:"https://www.chichi.co.jp/info/resourceful/maxim/2019/meigen-buddhism/"
+})`
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+
+  font-family: 'Noto Serif JP';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.04em;
+
+  color: white !important;
 `;
 
 export default ClearOrOutTemplate;
