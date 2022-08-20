@@ -75,7 +75,7 @@ class GameView2 extends Component {
     render() {
         return(
             <View id="gameView">
-                <MenuBar time={this.props.time} lvName="権中僧正" candleNum={this.props.candleNum} />
+                <MenuBar lvName="権中僧正" candleNum={this.props.candleNum} />
                 <GameBackImg src={lv2BackImg} onClick={this.props.lostClickFn} />
                 <Monk onClick={this.props.monkClickFn} />
                 <BackImageLost className="lost-view"></BackImageLost>

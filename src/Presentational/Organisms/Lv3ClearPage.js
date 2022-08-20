@@ -6,6 +6,8 @@ import clear3_3Img from '../../img/clear3_3.jpg';
 import clear3_4Img from '../../img/clear3_4.jpg';
 import CommonBtn from "../Atoms/CommonBtn";
 
+import successM from "./../../music/aSuccess.mp3";
+
 const Lv3ClearPage = () => {
   const [flagOne,setFlagOne] = useState(true);
   const [flagTwo,setFlagTwo] = useState(true);
@@ -20,6 +22,16 @@ const Lv3ClearPage = () => {
   const goPage = () => {
     window.location.href = '/game/1';
   }
+
+  const playSound = (Mfile) => {
+    const audio = new Audio(Mfile);
+    audio.volume = 0.1
+    audio.play();
+    audio.currentTime = 0
+    console.log('play');
+  }
+
+  playSound(successM);
 
   return(
 

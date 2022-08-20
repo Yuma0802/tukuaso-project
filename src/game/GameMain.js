@@ -5,8 +5,6 @@ import GameView from "./GameView";
 import GameView2 from "./GameView2";
 import GameView3 from "./GameView3";
 
-import aSuccessM from "./../music/aSuccess.mp3";
-
 class GameMain extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +16,6 @@ class GameMain extends Component {
 
         this.state = {
             monkCoordinate: this.createRandomCoordinate(this.maxGameViewX, this.maxGameViewY),
-            time: 30,
             candleNum: 3,
             gameView: null
         }
@@ -27,30 +24,13 @@ class GameMain extends Component {
     /////////////////////////////////////
     //game script
     componentDidMount() {
-        this.timeCount();
         this.setGameView();
     }
-
 
     createRandomCoordinate(maxX, maxY) {
         let x = Math.floor( Math.random() * (maxX + 1 - 0) ) + 0;
         let y = Math.floor( Math.random() * (maxY + 1 - 0) ) + 0;
         return [x, y]
-    }
-
-    setTime() {
-        this.setState({
-            time: this.state.time - 1
-        });
-        
-        if(this.state.time == 0) {
-            console.log('end');
-            clearInterval(this.timeCountObj);
-        }
-    }
-
-    timeCount() {
-        this.timeCountObj = setInterval(this.setTime.bind(this) ,1000);
     }
 
     monkClickFn() {
@@ -63,11 +43,13 @@ class GameMain extends Component {
 
             switch(this.props.match.params.lv) {
                 case '1':
-                    this.playSound(aSuccessM);
                     location.href = '/game/1/success'
                     break;
                 case '2':
                     location.href = '/game/2/success'
+                    break;
+                case '3':
+                    location.href = '/game/3/success'
                     break;
             }
         }.bind(this), 2000);
@@ -93,6 +75,9 @@ class GameMain extends Component {
                     case '2':
                         location.href = '/game/2/lost'
                         break;
+                    case '3':
+                        location.href = '/game/3/lost'
+                        break;
                 }
             }
         }.bind(this), 2000);
@@ -105,7 +90,6 @@ class GameMain extends Component {
                             maxGameViewX={this.maxGameViewX} 
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
-                            time={this.state.time} 
                             monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
@@ -116,7 +100,6 @@ class GameMain extends Component {
                             maxGameViewX={this.maxGameViewX} 
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
-                            time={this.state.time} 
                             monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
@@ -127,20 +110,12 @@ class GameMain extends Component {
                             maxGameViewX={this.maxGameViewX} 
                             maxGameViewY={this.maxGameViewY} 
                             monkCoordinate={this.state.monkCoordinate} 
-                            time={this.state.time} 
                             monkClickFn={this.monkClickFn.bind(this)} 
                             lostClickFn={this.lostClickFn.bind(this)} 
                             candleNum={this.state.candleNum}
                         />
                 break;
         }
-    }
-
-    playSound(Mfile) {
-        const audio = new Audio(Mfile);
-        audio.play();
-        audio.currentTime = 0
-        console.log('play');
     }
     /////////////////////////////////////
 

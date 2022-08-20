@@ -16,6 +16,7 @@ const ClearOrOutTemplate = (props) => {
 
   const playSound = (Mfile) => {
     const audio = new Audio(Mfile);
+    audio.volume = 0.1
     audio.play();
     audio.currentTime = 0
     console.log('play');
