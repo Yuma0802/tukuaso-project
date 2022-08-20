@@ -7,6 +7,7 @@ import TitlePage from './Presentational/Organisms/TitlePage';
 import Explanation from './Presentational/Organisms/Explanation';
 import ClearOrOutTemplate from './Presentational/Organisms/ClearOrOutTemplate';
 import Lv3ClearPage from './Presentational/Organisms/Lv3ClearPage';
+import Lv3OutPage from './Presentational/Organisms/Lv3OutPage';
 import AllClearPage from './Presentational/Organisms/AllClearPage';
 
 function App() {
