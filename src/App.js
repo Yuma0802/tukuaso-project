@@ -6,11 +6,12 @@ import GameMain from './game/GameMain';
 import TitlePage from './Presentational/Organisms/TitlePage';
 import Explanation from './Presentational/Organisms/Explanation';
 import ClearOrOutTemplate from './Presentational/Organisms/ClearOrOutTemplate';
-import Lv3OutPage from './Presentational/Organisms/Lv3OutPage';
 import Lv3ClearPage from './Presentational/Organisms/Lv3ClearPage';
+import AllClearPage from './Presentational/Organisms/AllClearPage';
 
 function App() {
   return (
+
     <BrowserRouter>
       <Switch>
         <Route exact path='/'><TitlePage /></Route>
