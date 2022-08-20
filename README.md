@@ -11,6 +11,7 @@
 - [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)
 - [2.600 万点以上の高品質なフリー画像素材 - Pixabay](https://pixabay.com/ja/)
 - [フリー画像, 無料画像, 著作権フリー画像, フリー素材 写真](https://www.pexels.com/ja-jp/)
+- [アイコン素材ダウンロードサイト「icooon-mono」 | 商用利用可能なアイコン素材が無料(フリー)ダウンロードできるサイト | 6000 個以上のアイコン素材を無料でダウンロードできるサイト ICOOON MONO](https://icooon-mono.com/)
 
 #### 音源
 
