@@ -20,7 +20,7 @@ const Lv3ClearPage = () => {
   setTimeout(() => {setFlagFour(false)}, 6000)
 
   const goPage = () => {
-    window.location.href = '/game/clear';
+    window.location.href = '/game/all/clear';
   }
 
   const playSound = (Mfile) => {
