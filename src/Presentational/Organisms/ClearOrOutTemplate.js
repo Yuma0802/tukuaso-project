@@ -9,7 +9,7 @@ import clear_2Img from '../../img/clear_2.jpg';
 const ClearOrOutTemplate = (props) => {
 
   const goPage = () => {
-    location.href = props.toPath;
+    window.location.href = props.toPath;
   }
 
   let img = clear_1Img;

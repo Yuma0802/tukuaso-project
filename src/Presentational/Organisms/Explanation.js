@@ -17,7 +17,9 @@ const Explanation = () => {
   setTimeout(() => {setFlagThree(false)}, 8000)
   setTimeout(() => {setFlagFour(false)}, 11000)
 
-
+  const goPage = () => {
+    window.location.href = '/game/1';
+  }
 
   return(
 
@@ -27,7 +29,7 @@ const Explanation = () => {
       <ThirdBackground flag={flagTwo}/>
       <ForthBackground flag={flagThree}/>
       <BtnWraper flag={flagFour}>
-        <CommonBtn text="さがす" />
+        <CommonBtn text="さがす" clickedFn={goPage} />
       </BtnWraper>
     </AllWrap>
 

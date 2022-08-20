@@ -5,6 +5,9 @@ import CommonBtn from "../Atoms/CommonBtn";
 
 const TitlePage = () => {
 
+  const goPage = () => {
+    window.location.href = '/explanation';
+  }
 
   return(
 
@@ -12,7 +15,7 @@ const TitlePage = () => {
 
       <TitleWord>僧じゃない</TitleWord>
       <BtnWraper>
-        <CommonBtn text="はじめる"/>
+        <CommonBtn text="はじめる" clickedFn={goPage}/>
       </BtnWraper>
     </WholeWraps>
   );
