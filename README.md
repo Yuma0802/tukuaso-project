@@ -1,3 +1,23 @@
+## 出典
+
+#### 画像
+
+- [Beautiful Free Images & Pictures | Unsplash](https://unsplash.com/)
+- [2.600 万点以上の高品質なフリー画像素材 - Pixabay](https://pixabay.com/ja/)
+- [フリー画像, 無料画像, 著作権フリー画像, フリー素材 写真](https://www.pexels.com/ja-jp/)
+
+#### 音源
+
+- [時代劇・歴史物～フリー効果音・無料効果音素材](https://taira-komori.jpn.org/jidaigeki01.html)
+- [和風・アジア音楽素材｜フリー無料の BGM 素材・音楽素材「甘茶の音楽工房」](https://amachamusic.chagasi.com/genre_asia.html)
+- [フリー BGM 素材『押し寄せる不安』試聴ページ｜フリー BGM DOVA-SYNDROME](https://dova-s.jp/bgm/play4872.html)
+- [フリー効果音素材「神々しい神楽鈴の音」試聴ページ｜フリー BGM DOVA-SYNDROME](https://dova-s.jp/se/play1295.html)
+- [環境音[1]｜効果音ラボ](https://soundeffect-lab.info/sound/environment/)
+
+#### 名言
+
+- [仏教の名言｜致知出版社](https://www.chichi.co.jp/info/resourceful/maxim/2019/meigen-buddhism/)
+
 ## git 基本操作
 
 - プッシュ操作の流れ
