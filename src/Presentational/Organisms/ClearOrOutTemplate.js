@@ -6,20 +6,33 @@ import out_2Img from '../../img/out_2.jpg';
 import clear_1Img from '../../img/clear_1.jpg';
 import clear_2Img from '../../img/clear_2.jpg';
 
+import successM from './../../music/aSuccess.mp3';
+
 const ClearOrOutTemplate = (props) => {
 
   const goPage = () => {
     window.location.href = props.toPath;
   }
 
+  const playSound = (Mfile) => {
+    const audio = new Audio(Mfile);
+    audio.play();
+    audio.currentTime = 0
+    console.log('play');
+  }
+
   let img = clear_1Img;
   if(props.num === 0){
+    playSound(successM);
     img = clear_1Img;
   }else if(props.num === 1){
+    playSound(successM);
     img = out_1Img
   }else if(props.num === 2){
+    playSound(successM);
     img = clear_2Img
   }else if(props.num === 3){
+    playSound(successM);
     img = out_2Img
   }
 
