@@ -12,7 +12,7 @@ const AllClearPage = () => {
   setTimeout(() => {setFlagTwo(false)}, 3000)
 
   const goPage = () => {
-    window.location.href = '/game/1';
+    window.location.href = '/';
   }
 
   return(

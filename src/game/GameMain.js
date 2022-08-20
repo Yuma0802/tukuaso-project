@@ -43,13 +43,13 @@ class GameMain extends Component {
 
             switch(this.props.match.params.lv) {
                 case '1':
-                    location.href = '/game/1/success'
+                    window.location.href = '/game/1/success'
                     break;
                 case '2':
-                    location.href = '/game/2/success'
+                    window.location.href = '/game/2/success'
                     break;
                 case '3':
-                    location.href = '/game/3/success'
+                    window.location.href = '/game/3/success'
                     break;
             }
         }.bind(this), 2000);
@@ -70,13 +70,13 @@ class GameMain extends Component {
                 console.log('game over');
                 switch(this.props.match.params.lv) {
                     case '1':
-                        location.href = '/game/1/lost'
+                        window.location.href = '/game/1/lost'
                         break;
                     case '2':
-                        location.href = '/game/2/lost'
+                        window.location.href = '/game/2/lost'
                         break;
                     case '3':
-                        location.href = '/game/3/lost'
+                        window.location.href = '/game/3/lost'
                         break;
                 }
             }
