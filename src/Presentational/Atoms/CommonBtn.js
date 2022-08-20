@@ -25,7 +25,10 @@ const SCommonBtnWrap = styled.button`
     color: white;
     background-color: transparent;
 
-    outline: none;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
   
   &:hover {
     cursor: pointer;
