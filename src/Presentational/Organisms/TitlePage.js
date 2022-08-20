@@ -55,7 +55,7 @@ const TitleWord = styled.h1`
   width: 350px;
   height: 73px;
 
-  font-family: 'Noto Serif JP';
+  font-family: 'Shippori Mincho';
   font-style: normal;
   font-weight: 400;
   font-size: 56px;
