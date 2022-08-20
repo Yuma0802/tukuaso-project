@@ -1,3 +1,13 @@
+## 遊ぶ
+
+- npm 8.5.0, node 16.14.2 をインストールしてください。
+
+- このリポジトリを clone してください。
+
+- npm install してください。
+
+- npm start でゲームが起動します。
+
 ## 出典
 
 #### 画像
@@ -17,44 +27,6 @@
 #### 名言
 
 - [仏教の名言｜致知出版社](https://www.chichi.co.jp/info/resourceful/maxim/2019/meigen-buddhism/)
-
-## git 基本操作
-
-- プッシュ操作の流れ
-
-  ```
-  #ステージングエリアに移動
-  git add -A
-
-  #コミット
-  git commit -m "メッセージ"
-
-  #プッシュ
-  git push origin ブランチ名
-  ```
-
-- ブランチ操作
-
-  ```
-  #新しくブランチを作成と移行
-  git checkout -b "ブランチ名"
-
-  #現在のブランチを確認
-  git branch
-
-  #既存のブランチへ移動
-  git checkout ブランチ名
-  ```
-
-- 変更分を取り込み
-
-  ```
-  #リモートの master ブランチから最新版を取り込み
-  git pull origin master
-
-  #任意のブランチを取り込み
-  git pull origin ブランチ名
-  ```
 
 # Getting Started with Create React App
 

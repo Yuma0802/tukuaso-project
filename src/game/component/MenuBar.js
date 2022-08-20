@@ -81,7 +81,7 @@ const MenuBar = (props) => {
     }
 
     const backHome = () => {
-        location.href = '/'
+        window.location.href = '/'
     }
 
     return(
